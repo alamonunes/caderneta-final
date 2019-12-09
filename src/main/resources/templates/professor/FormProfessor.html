@@ -1,0 +1,115 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Caderneta</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,600"
+	rel="stylesheet">
+
+<!-- Styles -->
+<style>
+html, body {
+	background-color: #fffcff;
+	color: #636b6f;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 200;
+	height: 100vh;
+	margin: 0;
+}
+
+.content {
+	text-align: center;
+}
+
+.links>a {
+	color: #ada9a9;
+	padding: 0px 25px;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+}
+
+h2 {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+}
+
+th {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 10px;
+	background-color: #dddddd;
+}
+
+div#menu{
+    border-bottom: #636b6f 1px;
+    padding-bottom: 100px;
+}
+
+div#form{
+    border: #636b6f 1px;
+    padding-bottom: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+button {
+    margin-top: 5px;
+}
+
+</style>
+</head>
+
+<body>
+    <div id="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Projeto Caderneta</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link disabled" href="/coordenador">Home <span class="sr-only">(current)</span></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+	
+	<div id="form">
+        <form action="#" th:action="@{/coordenador/cadastrarprofessor}" th:object="${professor}" method="POST">
+            <h3>Cadastrar Professor</h3>
+			<div class="form-group">
+                <label for="nome">Nome:</label> 
+                <input id="nome" name="nome" type="text" th:field="*{nome}" class="form-control" placeholder="Nome" /> 
+                <label for="email">E-mail:</label> 
+				<input id="email" name="email" type="text" th:field="*{email}" class="form-control" placeholder="E-mail" />
+				<label for="login">Login:</label> 
+				<input id="login" name="login" type="text" th:field="*{login}" class="form-control" placeholder="Login" />
+				<label for="senha">Senha:</label> 
+                <input id="senha" name="senha" type="password" th:field="*{senha}" class="form-control" placeholder="Senha" />
+				<button type="submit" class="btn btn-primary">Salvar</button>
+			</div>
+		</form>
+</div>
+
+</body>
+</html>

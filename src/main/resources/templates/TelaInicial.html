@@ -1,0 +1,109 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Login</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,600"
+	rel="stylesheet">
+
+<!-- Styles -->
+<style>
+html, body {
+	background-color: #fffcff;
+	color: #636b6f;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 200;
+	height: 100vh;
+	margin: 0;
+}
+
+.content {
+	text-align: center;
+}
+
+.links>a {
+	color: #ada9a9;
+	padding: 0px 25px;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+}
+
+h2 {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+}
+
+th {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 10px;
+	background-color: #dddddd;
+}
+
+div#menu{
+    border-bottom: #636b6f 1px;
+    padding-bottom: 100px;
+}
+
+div#login{
+    border: #636b6f 1px;
+    padding-bottom: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+</style>
+</head>
+
+<body>
+    <div id="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Projeto Caderneta</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+	
+	<div id="login">
+	<form action="#" th:action="@{/login}" method="POST" class="" th:object="${usuario}">
+				<h3>Login</h3>
+				<hr>
+				<div class="form-group">
+					<label for="login"></label>
+					<input type="text" name="login" class="form-control" th:value="*{login}" placeholder="Digite seu login" required autofocus />
+				</div>
+				<div class="form-group">
+					<label for="senha"></label>
+					<input type="password" name="senha" class="form-control" th:value="*{senha}" placeholder="Digite sua senha" required />
+				</div>
+				  <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cordenador</title>
+    <link rel="stylesheet" th:href="@{/assets/css/estilo.css}">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+
+
+    <div class="wrapper">
+                    <div class="sidebar">
+                <h2>"SUAP"</h2>
+                <ul>
+
+                    <li><a href="/coordenador/"><i class="fas fa-home"></i>HOME</a></li>
+                    <li><a href="/coordenador/cadastraraluno"><i class="fas fa-list"></i>Cadastrar Aluno</a></li> 
+                    <li><a href="/coordenador/cadastrarprofessor"><i class="fas fa-list"></i>Cadastrar Professor</a></li> 
+                    <li><a href="/coordenador/cadastrarturma"><i class="fas fa-user-alt"></i>Cadastrar Turma</a></li> 
+                    <li><a href="/coordenador/cadastrardisciplina"><i class="fas fa-list"></i>Cadastrar Disciplina</a></li>
+                    <li><a href="/coordenador/listAlunos"><i class="fas fa-user-alt"></i>Alunos</a></li>
+                    <li><a href="/coordenador/listDisciplina"><i class="fas fa-user-alt"></i>Disciplinas</a></li>
+                    <li><a href="/turmas"><i class="fas fa-user-alt"></i>Turmas</a></li>
+                    <li><a href="/login/logout"><i class="fas fa-clipboard-list"></i>Logout</a></li>
+                    
+                    
+                </ul>
+            </div>
+        <div class="main_content">
+            <div class="header">"SUAP"</div>
+        </div>
+
+		<div class="main_content3" align="center">
+
+            <table width="100%" border="1" cellpadding="5">
+                <thead>
+                    <tr>
+                         <td align="center" ><h4>Coordenador</h4></td>
+                         <td align="center"><h4>Email</h4></td><td></td>
+                         
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td th:text="${coordenador.nome}" style="white-space: initial"></td> 
+                            <td th:text="${coordenador.email}" style="white-space: initial"></td> 
+                        </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
